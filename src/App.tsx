@@ -16,7 +16,11 @@ function App() {
 
   return (
     <Router>
-      <div className={`min-h-screen flex flex-col transition-colors duration-300 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-900'}`}>
+      <div
+        className={`min-h-screen flex flex-col transition-colors duration-300 ${
+          isDarkMode ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-blue-50 to-cyan-50 text-gray-900'
+        }`}
+      >
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <main className="flex-grow">
           <Routes>

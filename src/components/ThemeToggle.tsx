@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 
@@ -8,6 +8,14 @@ interface ThemeToggleProps {
 }
 
 function ThemeToggle({ isDarkMode, setIsDarkMode }: ThemeToggleProps) {
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
@@ -38,4 +46,4 @@ function ThemeToggle({ isDarkMode, setIsDarkMode }: ThemeToggleProps) {
   );
 }
 
-export default ThemeToggle
+export default ThemeToggle;
